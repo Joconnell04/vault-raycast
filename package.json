@@ -1,0 +1,79 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "vault",
+  "title": "Vault",
+  "description": "Add, search, edit and delete API keys and passwords stored in a Notion database",
+  "icon": "icon.png",
+  "author": "joconnell04",
+  "license": "MIT",
+  "version": "1.0.0",
+  "categories": [
+    "Developer Tools",
+    "Security"
+  ],
+  "commands": [
+    {
+      "name": "add-secret",
+      "title": "Add Secret",
+      "subtitle": "Vault",
+      "description": "Save a new API key or password to the Notion Vault",
+      "mode": "view"
+    },
+    {
+      "name": "search-vault",
+      "title": "Search Vault",
+      "subtitle": "Vault",
+      "description": "Find a secret, copy it, edit it or delete it",
+      "mode": "view"
+    },
+    {
+      "name": "bulk-add",
+      "title": "Bulk Add",
+      "subtitle": "Vault",
+      "description": "Paste text with many keys (e.g. a Google Keep search), preview, add the new ones",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "notionToken",
+      "type": "password",
+      "required": true,
+      "title": "Notion Integration Token",
+      "description": "Internal integration secret (ntn_…). Share the Secrets database with the integration in Notion.",
+      "placeholder": "ntn_…"
+    },
+    {
+      "name": "databaseId",
+      "type": "textfield",
+      "required": true,
+      "title": "Vault Database ID",
+      "description": "ID of your Notion Secrets database (the 32 characters in its URL)",
+      "placeholder": "32-character database ID"
+    }
+  ],
+  "dependencies": {
+    "@notionhq/client": "2.3.0",
+    "@raycast/api": "^2.4.1",
+    "@raycast/utils": "^2.3.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.x",
+    "@types/react": "19.x",
+    "eslint": "^9",
+    "prettier": "^3",
+    "typescript": "^5.4"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  },
+  "platforms": [
+    "macOS"
+  ],
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
